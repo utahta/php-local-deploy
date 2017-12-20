@@ -1,12 +1,13 @@
 REPO="EDIT THIS"
 PROJECT="EDIT THIS"
+BRANCH="master"
 RELEASE_DIR="releases"
-RELEASE_PROJECT=${RELEASE_DIR}/${PROJECT}-`date '+%Y%m%d%H%M'`
+RELEASE_PROJECT=${RELEASE_DIR}/${PROJECT}-$(shell date '+%Y%m%d%H%M')
 COMPOSER=`which composer`
 
 deploy: validate
 	@mkdir -p ${RELEASE_DIR}
-	@git clone ${REPO} ${RELEASE_PROJECT}
+	@git clone -b ${BRANCH} ${REPO} ${RELEASE_PROJECT}
 	@cd ${RELEASE_PROJECT} && ${COMPOSER} install
 	@ln -sfn ${RELEASE_PROJECT} ${PROJECT}
 
