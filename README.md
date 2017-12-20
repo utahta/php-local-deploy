@@ -32,6 +32,6 @@ $ tree -L 2
 ├── Makefile
 ├── releases
 │   └── wp-social-bookmarking-light-201712191707
-└── wp-social-bookmarking-light -> wp-social-bookmarking-light-201712191707
+└── wp-social-bookmarking-light -> releases/wp-social-bookmarking-light-201712191707
 ```
 
